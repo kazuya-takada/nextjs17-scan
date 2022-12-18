@@ -22,3 +22,4 @@
   - https://github.com/jamenamcinteer/react-qr-barcode-scanner/issues/29
 - スタイリングには Tailwind を使用
   - `tailwind.config.js`に`mode: 'jit'`を設定すること
+- 使用はメッッチャ簡単(実際はダイアログとかにする)
