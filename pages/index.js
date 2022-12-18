@@ -4,7 +4,8 @@ import dynamic from 'next/dynamic'
 export default function Home() {
   const BarcodeScannerComponent = dynamic(() => import('react-qr-barcode-scanner'), { ssr: false })
 
-  const [data, setData] = useState('ここに表示')
+  // 必ず一回デフォルトでスキャンされるので、空文字にする
+  const [data, setData] = useState('')
   const [isOpened, setIsOpened] = useState(false)
 
   const openScanner = () => setIsOpened(true)
@@ -35,7 +36,6 @@ export default function Home() {
             height={800}
             onUpdate={(err, result) => {
               if (result) setData(result.text)
-              else setData('Not Found')
             }}
           />
         )}
