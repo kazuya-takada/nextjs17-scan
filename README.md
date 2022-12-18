@@ -6,7 +6,7 @@
 
 # デプロイ先・検証結果
 
-- デプロイ先：
+- デプロイ先：https://delightful-mushroom-07fc20100.2.azurestaticapps.net/
 - 検証端末：IPhone8, ios15.2
 - 結果：
 - iOS-14.3 未満は chrome だと動かないらしい（safari は OK）
