@@ -11,20 +11,35 @@ export default function Home() {
   const closeScanner = () => setIsOpened(false)
 
   return (
-    <div>
-      <h1>スキャン結果：{data}</h1>
-      <button onClick={openScanner}>起動</button>
-      <button onClick={closeScanner}>停止</button>
-      {isOpened && (
-        <BarcodeScannerComponent
-          width={500}
-          height={500}
-          onUpdate={(err, result) => {
-            if (result) setData(result.text)
-            else setData('Not Found')
-          }}
-        />
-      )}
+    <div className='p-5'>
+      <h1 className='text-center text-3xl font-semibold'>スキャン結果：{data}</h1>
+      <div className='flex justify-center mt-5'>
+        <button
+          onClick={openScanner}
+          class='bg-green-600 hover:bg-green-500 text-white rounded px-4 py-2 mr-4'
+        >
+          起動
+        </button>
+        <button
+          onClick={closeScanner}
+          class='bg-gray-600 hover:bg-gray-500 text-white rounded px-4 py-2'
+        >
+          停止
+        </button>
+      </div>
+
+      <div className='flex justify-center mt-5'>
+        {isOpened && (
+          <BarcodeScannerComponent
+            width={800}
+            height={800}
+            onUpdate={(err, result) => {
+              if (result) setData(result.text)
+              else setData('Not Found')
+            }}
+          />
+        )}
+      </div>
     </div>
   )
 }
